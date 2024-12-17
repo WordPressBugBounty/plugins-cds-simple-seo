@@ -3,8 +3,8 @@ Contributors: coleds
 Donate link: https://checkout.square.site/merchant/CGD6KJ0N7YECM/checkout/BN3726JNC6C6P6HL3JKNX3LC
 Tags: SEO, meta, meta keywords, mera description, meta title, woocommerce seo, post, local seo, search engine, open graph, optimization, Google, google webmaster tools, analytic, analytics, analytics 4, readability, facebook, twitter, Bing, Yandex, custom post types, custom post type, custom posts, custom post, sitemap, import rank math, import all in one seo, import yoast, 
 Requires at least: 4.6.2
-Tested up to: 6.6.1
-Stable tag: 2.0.29
+Tested up to: 6.7.1
+Stable tag: 2.0.30
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Requires PHP: 7.4
@@ -176,5 +176,12 @@ Release Date: April 28th, 2024
 Release Date: August 22nd, 2024
 
 * get_home_path() include for sitemap fix.
+
+= 2.0.30 =
+
+Release Date: December 17th, 2024
+
+* Canonical URL fixes.
+* Some minor tweaks to code here and there.
 
 

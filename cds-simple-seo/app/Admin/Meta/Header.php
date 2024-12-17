@@ -39,12 +39,15 @@ class Header {
 		 *
 		 */
 
+		$sseo_canonical_url = null;
 		if (is_front_page() && is_home()) { /* Default Homepage */
 			$description = get_option('sseo_default_meta_description');
 			$keywords = get_option('sseo_default_meta_keywords');
+			$sseo_canonical_url = get_home_url();
 		} elseif (is_home()) { /* Blog Page */
 			$description = get_post_meta(get_option('page_for_posts'), 'sseo_meta_description', true);
 			$keywords = get_post_meta(get_option('page_for_posts'), 'sseo_meta_keywords', true);
+			$sseo_canonical_url = get_permalink(get_option('page_for_posts'));
 		} elseif ((is_front_page() || is_home()) && isset($post->ID)) { /* Static */
 			$keywords = get_post_meta($post->ID, 'sseo_meta_keywords', true);
 			$description = get_post_meta($post->ID, 'sseo_meta_description', true);
@@ -57,9 +60,13 @@ class Header {
 			echo '<meta name="keywords" content="'.esc_attr($keywords).'" />' . "\n";
 		}
 
-		$sseo_canonical_url = null;
 		if (empty($sseo_canonical_url) && isset($post->ID)) {
-			$sseo_canonical_url = get_post_meta($post->ID, 'sseo_canonical_url', true);
+			$possible_canonical_url = get_post_meta($post->ID, 'sseo_canonical_url', true);
+			if (!empty($possible_canonical_url)) {
+				$sseo_canonical_url = get_post_meta($post->ID, 'sseo_canonical_url', true);
+			} else {
+				$sseo_canonical_url = wp_get_canonical_url($post->ID);
+			}
 		}
 
 		if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
@@ -118,6 +125,10 @@ class Header {
 			$sseo_fb_description = get_post_meta($post->ID, 'sseo_fb_description', true);
 			$sseo_fb_image_id = get_post_meta($post->ID, 'sseo_fb_image', true);
 		}
+		
+		if (!empty($description) && empty($sseo_fb_description)) {
+			$sseo_fb_description = $description;
+		}
 
 		$current_url = null;
 		$sseo_fb_image = null;
@@ -153,8 +164,8 @@ class Header {
 		if ($current_url) { echo '<meta property="og:url" content="'.esc_url($current_url).'" />' . "\n"; }
 		if ($current_url) { echo '<meta property="og:type" content="website" />'."\n"; }
 		if ($sseo_fb_title) { echo '<meta property="og:title" content="'.esc_attr($sseo_fb_title).'" />' . "\n"; }
-		if (isset($sseo_fb_description)) { echo '<meta property="og:description" content="'.esc_attr($sseo_fb_description).'" />' . "\n"; }
-		
+		if (!empty($sseo_fb_description)) { echo '<meta property="og:description" content="'.esc_attr($sseo_fb_description).'" />' . "\n"; }
+
 		/* Default to the featured image sense we have no Facebook image. */
 		if (empty($sseo_fb_image)) {
 			$sseo_fb_image = wp_get_attachment_url(get_post_thumbnail_id());
