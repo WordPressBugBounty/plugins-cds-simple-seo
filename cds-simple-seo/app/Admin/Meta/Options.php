@@ -38,7 +38,7 @@ class Options {
 			echo '<div class="notice notice-success is-dismissible"><p>'.__('Rank Math metadata has been coppied to Simple SEO, awesome!', SSEO_TXTDOMAIN).'</p></div>';
 		}
 		
-		echo '<div class="notice notice-info is-dismissible"><p>'.__('Please', SSEO_TXTDOMAIN).' <a href="https://checkout.square.site/merchant/CGD6KJ0N7YECM/checkout/BN3726JNC6C6P6HL3JKNX3LC" target="_blank">'.__('donate to Simple SEO', SSEO_TXTDOMAIN).'.</a> or <a href="https://wordpress.org/support/plugin/cds-simple-seo/reviews/" target="_blank">'.__('Leave a Review.', SSEO_TXTDOMAIN).'</a> Or Both! Please email <a href="mailto:dave@coleds.com">David Cole</a> with any questions.</p></div>';
+		echo '<div class="notice notice-info is-dismissible"><p>'.__('Please', SSEO_TXTDOMAIN).' <a href="https://checkout.square.site/merchant/CGD6KJ0N7YECM/checkout/BN3726JNC6C6P6HL3JKNX3LC" target="_blank">'.__('donate to Simple SEO', SSEO_TXTDOMAIN).'.</a> or <a href="https://wordpress.org/support/plugin/cds-simple-seo/reviews/" target="_blank">'.__('Leave a Review.', SSEO_TXTDOMAIN).'</a> Or Both! Please email <a href="mailto:dmcole78@gmail.com">David Cole</a> with any questions.</p></div>';
 		
 		$content = '<div class="wrap">';
 		$content .= '<h1>';

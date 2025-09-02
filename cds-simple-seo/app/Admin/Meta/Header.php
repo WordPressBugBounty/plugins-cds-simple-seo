@@ -38,6 +38,11 @@ class Header {
 		 * esc_textarea() within a textarea; <textarea>esc_textarea($value)</textarea>
 		 *
 		 */
+		 
+		/*$allmeta = get_post_meta($post->ID);
+		echo '<pre>';
+		Print_r($allmeta);
+		echo '</pre>';*/
 
 		$sseo_canonical_url = null;
 		if (is_front_page() && is_home()) { /* Default Homepage */
