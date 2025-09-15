@@ -91,22 +91,22 @@
 	});
 	
 	function updatePreview() {
-		$("#sseo_snippet_title").html('');
+		$("#sseo_snippet_title").text('');
 
 		var sseoMetaDescription = $.trim($("#sseoMetaDescription").val());
 		if (sseoMetaDescription.length > 0) {
-			$("#sseo_snippet_description").html(sseoMetaDescription);
+			$("#sseo_snippet_description").text(sseoMetaDescription);
 		}
 
 		var sseoMetaTitle = $.trim($("#sseoMetaTitle").val());
 		if (sseoMetaTitle.length > 0) {
-			$("#sseo_snippet_title").html(sseoMetaTitle);
+			$("#sseo_snippet_title").text(sseoMetaTitle);
 		}
 		
 		if (sseoMetaTitle.length <= 0) {
 			var title = $.trim($("#title").val());
 			if (title.length > 0) {
-				$("#sseo_snippet_title").html(title);
+				$("#sseo_snippet_title").text(title);
 			}
 		}
 	}
