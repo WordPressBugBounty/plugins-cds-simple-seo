@@ -3,8 +3,8 @@ Contributors: coleds
 Donate link: https://checkout.square.site/merchant/CGD6KJ0N7YECM/checkout/BN3726JNC6C6P6HL3JKNX3LC
 Tags: SEO, meta, meta keywords, mera description, meta title, woocommerce seo, post, local seo, search engine, open graph, optimization, Google, google webmaster tools, analytic, analytics, analytics 4, readability, facebook, twitter, Bing, Yandex, custom post types, custom post type, custom posts, custom post, sitemap, import rank math, import all in one seo, import yoast, 
 Requires at least: 4.6.2
-Tested up to: 6.8.2
-Stable tag: 2.0.32
+Tested up to: 6.9
+Stable tag: 2.0.33
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Requires PHP: 7.4
@@ -188,5 +188,11 @@ Release Date: September 2nd, 2025
 Release Date: September 15th, 2025
 
 * Vulnerability reported by Jetpack. Fixed.
+
+= 2.0.33 =
+
+Release Date: December 1st, 2025
+
+* Version update for WordPress 6.9
 
 
