@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: coleds
 Donate link: https://checkout.square.site/merchant/CGD6KJ0N7YECM/checkout/BN3726JNC6C6P6HL3JKNX3LC
-Tags: SEO, meta, meta keywords, mera description, meta title, woocommerce seo, post, local seo, search engine, open graph, optimization, Google, google webmaster tools, analytic, analytics, analytics 4, readability, facebook, twitter, Bing, Yandex, custom post types, custom post type, custom posts, custom post, sitemap, import rank math, import all in one seo, import yoast, 
+Tags: SEO, meta, meta keywords, mera description, meta title, woocommerce seo, post, local seo, search engine, open graph, optimization, Google, google webmaster tools, analytic, analytics, analytics 4, readability, facebook, twitter, Bing, Yandex, custom post types, custom post type, custom posts, custom post, sitemap, import rank math, import all in one seo, import yoast 
 Requires at least: 4.6.2
-Tested up to: 6.9
-Stable tag: 2.0.33
+Tested up to: 7.0
+Stable tag: 2.0.34
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Requires PHP: 7.4
@@ -194,5 +194,11 @@ Release Date: September 15th, 2025
 Release Date: December 1st, 2025
 
 * Version update for WordPress 6.9
+
+= 2.0.34 =
+
+Release Date: May 19th, 2026
+
+* Version update for WordPress 7.0
 
 

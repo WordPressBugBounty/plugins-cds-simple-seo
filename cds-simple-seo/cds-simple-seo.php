@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
 }
 
 define('SSEO_TXTDOMAIN', 'cds-simple-seo');
-define('SSEO_VERSION', '2.0.33');
+define('SSEO_VERSION', '2.0.34');
 define('SSEO_PATH', plugin_dir_path(__FILE__));
 
 require_once(dirname( __FILE__ ).'/autoloader.php');
