@@ -8,8 +8,9 @@ jQuery(document).ready(function (r) {
 				var i = r("#edit-" + e),
 					o = r("#post-" + e),
 					s = r(".column-seo_title", o).text(),
-					n = r(".column-seo_description", o).text();
-				r(".seo_title", i).val(s), r(".seo_description", i).val(n);
+					n = r(".column-seo_description", o).text(),
+					k = r(".column-seo_keywords", o).text();
+				r(".seo_title", i).val(s), r(".seo_description", i).val(n), r(".seo_keywords", i).val(k);
 				var l = r(".row-title", o).text(),
 					c = r(".seo_title", i).attr("placeholder");
 				r(".seo_title", i).attr("placeholder", l + c);
@@ -19,7 +20,7 @@ jQuery(document).ready(function (r) {
 						r(".seo_" + e + "_count", i).text(t), t <= o ? r(".seo_" + e + "_count", i).css("color", "#70C034") : r(".seo_" + e + "_count", i).css("color", "#dd3d36")
 					})
 				};
-				d("title", 70), d("description", 350)
+				d("title", 70), d("description", 250), d("keywords", 350)
 			}
 		}
 	}

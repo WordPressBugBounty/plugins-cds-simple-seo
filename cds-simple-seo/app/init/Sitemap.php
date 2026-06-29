@@ -42,7 +42,7 @@ class Sitemap {
 	public function buildSitemap() {
 		global $wpdb;
 		
-		$xmlString = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+		$xmlString = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' . PHP_EOL . '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' . PHP_EOL . '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'. PHP_EOL;
 		
 		$postTypesQrStr = null;
 		$postTypes = get_option('sseo_sitemap_post_types');
@@ -74,23 +74,36 @@ class Sitemap {
 			$qs .= " AND (".substr($postTypesQrStr, 4).")";
 		}
 
-		$qs .= " ORDER BY p.post_date_gmt DESC";
+		$qs .= " ORDER BY p.post_date_gmt ASC";
 
 		$posts = $wpdb->get_results($qs);
 		
+		$priority = "1.00";
+		
+		$change_freq = "weekly";
+		
+		$loop_count = 0;
+		
 		foreach($posts as $post) {
+						
+			if ($loop_count > 0) {
+				$priority = "0.80";
+			}
+			$loop_count++;
+			
 			$permalink = $this->getPermalinkFromId($post->ID);
 			if (empty($permalink)) {
 				continue;
 			}
-			$xmlString .= '<url>
-			<loc>'.htmlspecialchars($permalink).'</loc>
-			<lastmod>'.date('c', strtotime($post->post_date_gmt)).'</lastmod>
-			<priority>0.80</priority>
-			</url>';
+			$xmlString .= '   <url>' . PHP_EOL .
+			'      <loc>'.htmlspecialchars($permalink).'</loc>'. PHP_EOL .
+			'      <lastmod>'.date('c', strtotime($post->post_date_gmt)).'</lastmod>' . PHP_EOL .
+			'      <changefreq>'.$change_freq.'</changefreq>' . PHP_EOL .
+			'      <priority>'.$priority.'</priority>' . PHP_EOL .
+			'   </url>' . PHP_EOL;
 		}
 		
-		$xmlString .= '</urlset>';
+		$xmlString .= '</urlset>' . PHP_EOL;
 
 		$path = get_home_path();
 		@unlink($path.'sitemap.xml');

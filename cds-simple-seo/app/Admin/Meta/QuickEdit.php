@@ -40,7 +40,7 @@ class QuickEdit {
 				</label>
 			</div>
 		</fieldset>
-		<?php break; case 'seo_description': ?>
+<?php break; case 'seo_description': ?>
 		<fieldset class="inline-edit-col-left clear">
 			<div class="inline-edit-col">
 				<label>
@@ -52,7 +52,19 @@ class QuickEdit {
 				</label>
 			</div>
 		</fieldset>
-		<?php break; }
+<?php break; case 'seo_keywords': ?>
+		<fieldset class="inline-edit-col-left clear">
+			<div class="inline-edit-col">
+				<label>
+					<span class="title"><?php echo __('SEO Keyw.'); ?></span>
+					<span class="input-text-wrap">
+						<textarea class="seo_keywords" name="sseo_meta_keywords"></textarea>
+						<span><span class="seo_keyowrds_count" style="color: rgb(112, 192, 52);">0</span> / <?php echo __('2 to 5 Keywords max. if you must | Recommended is none at all', SSEO_TXTDOMAIN); ?></span>
+					</span>
+				</label>
+			</div>
+		</fieldset>
+<?php break; }
 	}
 }
 

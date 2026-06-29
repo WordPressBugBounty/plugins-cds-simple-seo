@@ -62,7 +62,7 @@ class init {
 		}
 		
 		/* Header, Title, Meta */
-		add_action('wp_head', [$this, 'renderHeader']);
+		add_action('wp_head', [$this, 'renderHeader'], 0);
 		$title = new Meta\Title();
 		add_filter('pre_get_document_title', [$title, 'getTitle']);
 		add_filter('wp_title', [$title, 'getTitle']);
