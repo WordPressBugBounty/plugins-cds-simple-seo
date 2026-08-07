@@ -1,10 +1,10 @@
 === Simple SEO ===
 Contributors: coleds
 Donate link: https://checkout.square.site/merchant/CGD6KJ0N7YECM/checkout/BN3726JNC6C6P6HL3JKNX3LC
-Tags: SEO, meta, meta keywords, mera description, meta title 
+Tags: SEO, meta, meta keywords, meta description, meta title 
 Requires at least: 4.6.2
-Tested up to: 7.0
-Stable tag: 2.0.35
+Tested up to: 7.0.3
+Stable tag: 2.0.36
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Requires PHP: 7.4
@@ -209,5 +209,11 @@ Release Date: June 29th, 2026
 * Added include priority to add_action for wp_head.
 * Keywords added to quick edit.
 * Sitemap cleanup and restructured.
+
+= 2.0.36 =
+
+Release Date: August 6th, 2026
+
+* Canonical URL fix.
 
 

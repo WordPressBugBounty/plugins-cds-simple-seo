@@ -96,7 +96,7 @@ class Header {
 			}
 		}
 
-		if (is_category() || is_tag()) {
+		if (is_category() || is_tag() || is_tax()) {
 			$term = $wp_query->get_queried_object();
 			if (!empty($term->term_id)) {
 				$term_meta = get_option("taxonomy_".$term->term_id);
@@ -156,8 +156,10 @@ class Header {
 		if (empty($current_url) && (is_category() || is_tag() || is_tax())) {
 			$obj_id = get_queried_object_id();
 			$current_url = get_term_link($obj_id);
+			$sseo_canonical_url = $current_url;
 		} elseif (empty($current_url) && isset($post->ID)) {
 			$current_url = get_permalink($post->ID);
+			$sseo_canonical_url = get_permalink($post->ID);
 		}
 
 		if (empty($sseo_fb_title)) {
@@ -237,6 +239,10 @@ class Header {
 
 		if (!empty($sseo_canonical_url)) {
 			echo '<link rel="canonical" href="'.esc_url($sseo_canonical_url).'" />' . "\n";
+		} elseif ((is_category() || is_tag() || is_tax())) {
+			$obj_id = get_queried_object_id();
+			$current_url = get_term_link($obj_id);
+			echo '<link rel="canonical" href="'.esc_url($current_url).'" />' . "\n";
 		}
 
 		echo '<!-- / Simple SEO plugin. -->' . "\n\n";
